@@ -31,9 +31,9 @@ def main():
     if options.pretty:
         USE_COLOR = True
 
-    if not options.pid:
+    if not (options.pid or options.input):
         sys.argv = [sys.argv[0], '--help']
-        print "No process specified - use -p <pid> or -n <pattern>"
+        print "No process or input file specified - use -p <pid> or -n <pattern> or -i <filename>"
         return parse_args()
 
     if options.raw:
